@@ -10,7 +10,8 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Cyrillic transcription bookmarklet by tkarabela</title>
+    <script src="javascripts/jquery-1.11.1.min.js"></script>
+    <title>Cyrillic transcription bookmarklet</title>
   </head>
 
   <body>
@@ -22,11 +23,15 @@
           <h2>Cyrillic transcription in your browser</h2>
         </header>
 
+        <noscript>Please enable JavaScript!</noscript>
+
         <section id="downloads" class="clearfix">
-          <a href="https://github.com/tkarabela/cyrillic-bookmarklet/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/tkarabela/cyrillic-bookmarklet/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="javascript:alert('Oops, could not load the bookmarklet.');" class="button noimage insert-en-bookmarklet"><span>Click and try!</span></a>
+          <a href="javascript:alert('Oops, could not load the bookmarklet.');" class="button noimage insert-cs-bookmarklet"><span>Klikni a vyzkoušej!</span></a>
           <a href="https://github.com/tkarabela/cyrillic-bookmarklet" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
+
+        <p id="sample"><strong>Sample text:</strong> Все люди рождаются свободными и равными в своëм достоинстве и правах. Они наделены разумом и совестью и должны поступать в отношении друг друга в духе братства. (To try again, reload the page.)</p>
 
         <hr>
 
@@ -34,24 +39,25 @@
           <h3>
 <a id="english-transcription-for-cyrillic" class="anchor" href="#english-transcription-for-cyrillic" aria-hidden="true"><span class="octicon octicon-link"></span></a>English transcription for cyrillic</h3>
 
-<p>How to use the bookmarklet:</p>
+<p>Do you prefer reading latin to cyrillic? With this bookmarklet, you can transliterate any webpage with one click, from your browser. Just follow these two easy steps:</p>
 
 <ol>
-<li>Bookmark this link: <a href="#fixme">cyrillic to English</a>
+<li>Bookmark this link: <a href="javascript:alert('Oops, could not load the bookmarklet.');" class="insert-en-bookmarklet">Cyrillic to English</a> (try clicking it!)
 </li>
-<li>Click on your bookbark at any time to transliterate currently opened page to latin.</li>
+<li>Click on your bookmark at any time to transliterate currently opened page to latin.</li>
 </ol>
 
 <h3>
 <a id="Český-přepis-azbuky" class="anchor" href="#%C4%8Cesk%C3%BD-p%C5%99epis-azbuky" aria-hidden="true"><span class="octicon octicon-link"></span></a>Český přepis azbuky</h3>
 
-<p>Jak používat tento bookmarklet:</p>
+<p>Chcete číst webové stránky v jazyce psaném azbukou, ale máte raději latinku? S tímto bookmarkletem můžete převést libovolnou stránku do latinky přímo v prohlížeči.</p>
 
 <ol>
-<li>Uložte si následující odkaz do záložek: <a href="#fixme">azbuka do češtiny</a>
+<li>Uložte si následující odkaz do záložek: <a href="javascript:alert('Oops, could not load the bookmarklet.');" class="insert-cs-bookmarklet">azbuka do češtiny</a>
 </li>
 <li>Na kterékoli webové stránce klikněte na tuto záložku a azbuka se přepíše do latinky.</li>
 </ol>
+
         </section>
 
         <footer>
@@ -62,5 +68,12 @@
         
       </div>
     </div>
+    <script type="text/javascript">
+      var csBookmarklet = 'javascript:/*%20%20%20%20%20Cyrillic%20transcription%20bookmarklet%20%20%20%20%20%20Author:%20Tomas%20Karabela%20%20%20%20%20Source:%20https://github.com/tkarabela/cyrillic-bookmarklet%20%20%20%20%20Version:%201.0%20*/%20%20var%20lang%20=%20"cs";%20/*%20"cs",%20"en"%20*/%20%20/*%20-------------------------------------------------------------------------%20*/%20%20function%20withLowercaseVariants(table)%20{%20%20%20%20%20var%20newTable%20=%20{};%20%20%20%20%20%20for%20(var%20key%20in%20table)%20{%20%20%20%20%20%20%20%20%20newTable[key]%20=%20table[key];%20%20%20%20%20%20%20%20%20newTable[key.toLowerCase()]%20=%20table[key].toLowerCase();%20%20%20%20%20}%20%20%20%20%20%20return%20newTable;%20}%20%20var%20czechTransliterationTable%20=%20withLowercaseVariants({%20%20%20%20%20/*%20Russian%20*/%20%20%20%20%20"%D0%90":%20"A",%20%20"%D0%91":%20"B",%20%20"%D0%92":%20"V",%20%20"%D0%93":%20"G",%20%20%20%20%20"%D0%94":%20"D",%20%20"%D0%95":%20"Je",%20"%D0%81":%20"Jo",%20"%D0%96":%20"%C5%BD",%20%20%20%20%20"%D0%97":%20"Z",%20%20"%D0%98":%20"I",%20%20"%D0%99":%20"J",%20%20"%D0%9A":%20"K",%20%20%20%20%20"%D0%9B":%20"L",%20%20"%D0%9C":%20"M",%20%20"%D0%9D":%20"N",%20%20"%D0%9E":%20"O",%20%20%20%20%20"%D0%9F":%20"P",%20%20"%D0%A0":%20"R",%20%20"%D0%A1":%20"S",%20%20"%D0%A2":%20"T",%20%20%20%20%20"%D0%A3":%20"U",%20%20"%D0%A4":%20"F",%20%20"%D0%A5":%20"Ch",%20"%D0%A6":%20"C",%20%20%20%20%20"%D0%A7":%20"%C4%8C",%20%20"%D0%A8":%20"%C5%A0",%20%20"%D0%A9":%20"%C5%A0%C4%8D",%20"%D0%AB":%20"Y",%20%20%20%20%20"%D0%AD":%20"E",%20%20"%D0%AE":%20"Ju",%20"%D0%AF":%20"Ja",%20%20%20%20%20%20/*%20Ukrainian%20*/%20%20%20%20%20"%D2%90":%20"G",%20%20"%D0%84":%20"Je",%20"%D0%87":%20"Ji",%20%20%20%20%20%20/*%20Belarusian%20*/%20%20%20%20%20"%D0%8E":%20"U",%20%20%20%20%20%20/*%20Macedonian%20*/%20%20%20%20%20"%D0%83":%20"%C4%8F",%20%20"%D0%85":%20"Dz",%20"%D0%88":%20"J",%20%20"%D0%8C":%20"%C5%A4",%20%20%20%20%20"%D0%89":%20"%C4%BD",%20%20"%D0%8A":%20"%C5%87",%20%20"%D0%8F":%20"D%C5%BE"%20});%20%20/*%20%20%20%20%20BGN/PCGN%20romanization,%20see%20%20%20%20%20http://en.wikipedia.org/wiki/BGN/PCGN_romanization%20*/%20var%20englishTransliterationTable%20=%20withLowercaseVariants({%20%20%20%20%20/*%20Russian%20*/%20%20%20%20%20"%D0%90":%20"A",%20%20"%D0%91":%20"B",%20%20"%D0%92":%20"V",%20%20"%D0%93":%20"G",%20%20%20%20%20"%D0%94":%20"D",%20%20"%D0%95":%20"Ye",%20"%D0%81":%20"Y%C3%AB",%20"%D0%96":%20"Zh",%20%20%20%20%20"%D0%97":%20"Z",%20%20"%D0%98":%20"I",%20%20"%D0%99":%20"Y",%20%20"%D0%9A":%20"K",%20%20%20%20%20"%D0%9B":%20"L",%20%20"%D0%9C":%20"M",%20%20"%D0%9D":%20"N",%20%20"%D0%9E":%20"O",%20%20%20%20%20"%D0%9F":%20"P",%20%20"%D0%A0":%20"R",%20%20"%D0%A1":%20"S",%20%20"%D0%A2":%20"T",%20%20%20%20%20"%D0%A3":%20"U",%20%20"%D0%A4":%20"F",%20%20"%D0%A5":%20"Kh",%20"%D0%A6":%20"Ts",%20%20%20%20%20"%D0%A7":%20"Ch",%20"%D0%A8":%20"Sh",%20"%D0%A9":%20"Shch",%20"%D0%AB":%20"Y",%20%20%20%20%20"%D0%AD":%20"E",%20%20"%D0%AE":%20"Yu",%20"%D0%AF":%20"Ya",%20%20%20%20%20%20/*%20Ukrainian%20*/%20%20%20%20%20"%D2%90":%20"G",%20%20"%D0%84":%20"Ye",%20"%D0%87":%20"Yi",%20%20%20%20%20%20/*%20Belarusian%20*/%20%20%20%20%20"%D0%8E":%20"W",%20%20%20%20%20%20/*%20Macedonian%20*/%20%20%20%20%20"%D0%83":%20"G",%20%20"%D0%85":%20"Dz",%20"%D0%88":%20"J",%20%20"%D0%8C":%20"%C5%A4",%20%20%20%20%20"%D0%89":%20"Lj",%20"%D0%8A":%20"Nj",%20"%D0%8F":%20"D%C5%BE"%20});%20%20function%20getTranscriber(lang)%20{%20%20%20%20%20var%20table%20=%20{%20%20%20%20%20%20%20%20%20"cs":%20czechTransliterationTable,%20%20%20%20%20%20%20%20%20"en":%20englishTransliterationTable%20%20%20%20%20}[lang];%20%20%20%20%20%20if%20(table%20===%20null)%20{%20%20%20%20%20%20%20%20%20console.log("getTranscriber():%20unknown%20language%20"%20+%20lang);%20%20%20%20%20}%20%20%20%20%20%20return%20function(text)%20{%20%20%20%20%20%20%20%20%20return%20text.replace(/./g,%20function(c){return%20table[c]%20||%20c;});%20%20%20%20%20};%20}%20%20function%20transcribeNode(n,%20transcriber)%20{%20%20%20%20%20/*%20TODO:%20when%20called%20twice,%20dont%20re-transcribe%20already%20finished%20text%20*/%20%20%20%20%20%20if%20(n.nodeType%20==%20document.TEXT_NODE)%20{%20%20%20%20%20%20%20%20%20n.data%20=%20transcriber(n.data);%20%20%20%20%20}%20else%20{%20%20%20%20%20%20%20%20%20for%20(var%20i%20=%200;%20i%20<%20n.childNodes.length;%20i++)%20{%20%20%20%20%20%20%20%20%20%20%20%20%20transcribeNode(n.childNodes[i],%20transcriber);%20%20%20%20%20%20%20%20%20}%20%20%20%20%20}%20}%20%20function%20transcribeTitle(transcriber)%20{%20%20%20%20%20if%20(document.title%20!=%20document._transcribed_title)%20{%20%20%20%20%20%20%20%20%20document.title%20=%20document._transcribed_title%20=%20transcriber(document.title);%20%20%20%20%20}%20}%20%20/*%20-------------------------------------------------------------------------%20*/%20/*%20run%20the%20transcription%20*/%20%20var%20transcriber%20=%20getTranscriber(lang);%20transcribeNode(document.body,%20transcriber);%20transcribeTitle(transcriber);';
+      var enBookmarklet = 'javascript:/*%20%20%20%20%20Cyrillic%20transcription%20bookmarklet%20%20%20%20%20%20Author:%20Tomas%20Karabela%20%20%20%20%20Source:%20https://github.com/tkarabela/cyrillic-bookmarklet%20%20%20%20%20Version:%201.0%20*/%20%20var%20lang%20=%20"en";%20/*%20"cs",%20"en"%20*/%20%20/*%20-------------------------------------------------------------------------%20*/%20%20function%20withLowercaseVariants(table)%20{%20%20%20%20%20var%20newTable%20=%20{};%20%20%20%20%20%20for%20(var%20key%20in%20table)%20{%20%20%20%20%20%20%20%20%20newTable[key]%20=%20table[key];%20%20%20%20%20%20%20%20%20newTable[key.toLowerCase()]%20=%20table[key].toLowerCase();%20%20%20%20%20}%20%20%20%20%20%20return%20newTable;%20}%20%20var%20czechTransliterationTable%20=%20withLowercaseVariants({%20%20%20%20%20/*%20Russian%20*/%20%20%20%20%20"%D0%90":%20"A",%20%20"%D0%91":%20"B",%20%20"%D0%92":%20"V",%20%20"%D0%93":%20"G",%20%20%20%20%20"%D0%94":%20"D",%20%20"%D0%95":%20"Je",%20"%D0%81":%20"Jo",%20"%D0%96":%20"%C5%BD",%20%20%20%20%20"%D0%97":%20"Z",%20%20"%D0%98":%20"I",%20%20"%D0%99":%20"J",%20%20"%D0%9A":%20"K",%20%20%20%20%20"%D0%9B":%20"L",%20%20"%D0%9C":%20"M",%20%20"%D0%9D":%20"N",%20%20"%D0%9E":%20"O",%20%20%20%20%20"%D0%9F":%20"P",%20%20"%D0%A0":%20"R",%20%20"%D0%A1":%20"S",%20%20"%D0%A2":%20"T",%20%20%20%20%20"%D0%A3":%20"U",%20%20"%D0%A4":%20"F",%20%20"%D0%A5":%20"Ch",%20"%D0%A6":%20"C",%20%20%20%20%20"%D0%A7":%20"%C4%8C",%20%20"%D0%A8":%20"%C5%A0",%20%20"%D0%A9":%20"%C5%A0%C4%8D",%20"%D0%AB":%20"Y",%20%20%20%20%20"%D0%AD":%20"E",%20%20"%D0%AE":%20"Ju",%20"%D0%AF":%20"Ja",%20%20%20%20%20%20/*%20Ukrainian%20*/%20%20%20%20%20"%D2%90":%20"G",%20%20"%D0%84":%20"Je",%20"%D0%87":%20"Ji",%20%20%20%20%20%20/*%20Belarusian%20*/%20%20%20%20%20"%D0%8E":%20"U",%20%20%20%20%20%20/*%20Macedonian%20*/%20%20%20%20%20"%D0%83":%20"%C4%8F",%20%20"%D0%85":%20"Dz",%20"%D0%88":%20"J",%20%20"%D0%8C":%20"%C5%A4",%20%20%20%20%20"%D0%89":%20"%C4%BD",%20%20"%D0%8A":%20"%C5%87",%20%20"%D0%8F":%20"D%C5%BE"%20});%20%20/*%20%20%20%20%20BGN/PCGN%20romanization,%20see%20%20%20%20%20http://en.wikipedia.org/wiki/BGN/PCGN_romanization%20*/%20var%20englishTransliterationTable%20=%20withLowercaseVariants({%20%20%20%20%20/*%20Russian%20*/%20%20%20%20%20"%D0%90":%20"A",%20%20"%D0%91":%20"B",%20%20"%D0%92":%20"V",%20%20"%D0%93":%20"G",%20%20%20%20%20"%D0%94":%20"D",%20%20"%D0%95":%20"Ye",%20"%D0%81":%20"Y%C3%AB",%20"%D0%96":%20"Zh",%20%20%20%20%20"%D0%97":%20"Z",%20%20"%D0%98":%20"I",%20%20"%D0%99":%20"Y",%20%20"%D0%9A":%20"K",%20%20%20%20%20"%D0%9B":%20"L",%20%20"%D0%9C":%20"M",%20%20"%D0%9D":%20"N",%20%20"%D0%9E":%20"O",%20%20%20%20%20"%D0%9F":%20"P",%20%20"%D0%A0":%20"R",%20%20"%D0%A1":%20"S",%20%20"%D0%A2":%20"T",%20%20%20%20%20"%D0%A3":%20"U",%20%20"%D0%A4":%20"F",%20%20"%D0%A5":%20"Kh",%20"%D0%A6":%20"Ts",%20%20%20%20%20"%D0%A7":%20"Ch",%20"%D0%A8":%20"Sh",%20"%D0%A9":%20"Shch",%20"%D0%AB":%20"Y",%20%20%20%20%20"%D0%AD":%20"E",%20%20"%D0%AE":%20"Yu",%20"%D0%AF":%20"Ya",%20%20%20%20%20%20/*%20Ukrainian%20*/%20%20%20%20%20"%D2%90":%20"G",%20%20"%D0%84":%20"Ye",%20"%D0%87":%20"Yi",%20%20%20%20%20%20/*%20Belarusian%20*/%20%20%20%20%20"%D0%8E":%20"W",%20%20%20%20%20%20/*%20Macedonian%20*/%20%20%20%20%20"%D0%83":%20"G",%20%20"%D0%85":%20"Dz",%20"%D0%88":%20"J",%20%20"%D0%8C":%20"%C5%A4",%20%20%20%20%20"%D0%89":%20"Lj",%20"%D0%8A":%20"Nj",%20"%D0%8F":%20"D%C5%BE"%20});%20%20function%20getTranscriber(lang)%20{%20%20%20%20%20var%20table%20=%20{%20%20%20%20%20%20%20%20%20"cs":%20czechTransliterationTable,%20%20%20%20%20%20%20%20%20"en":%20englishTransliterationTable%20%20%20%20%20}[lang];%20%20%20%20%20%20if%20(table%20===%20null)%20{%20%20%20%20%20%20%20%20%20console.log("getTranscriber():%20unknown%20language%20"%20+%20lang);%20%20%20%20%20}%20%20%20%20%20%20return%20function(text)%20{%20%20%20%20%20%20%20%20%20return%20text.replace(/./g,%20function(c){return%20table[c]%20||%20c;});%20%20%20%20%20};%20}%20%20function%20transcribeNode(n,%20transcriber)%20{%20%20%20%20%20/*%20TODO:%20when%20called%20twice,%20dont%20re-transcribe%20already%20finished%20text%20*/%20%20%20%20%20%20if%20(n.nodeType%20==%20document.TEXT_NODE)%20{%20%20%20%20%20%20%20%20%20n.data%20=%20transcriber(n.data);%20%20%20%20%20}%20else%20{%20%20%20%20%20%20%20%20%20for%20(var%20i%20=%200;%20i%20<%20n.childNodes.length;%20i++)%20{%20%20%20%20%20%20%20%20%20%20%20%20%20transcribeNode(n.childNodes[i],%20transcriber);%20%20%20%20%20%20%20%20%20}%20%20%20%20%20}%20}%20%20function%20transcribeTitle(transcriber)%20{%20%20%20%20%20if%20(document.title%20!=%20document._transcribed_title)%20{%20%20%20%20%20%20%20%20%20document.title%20=%20document._transcribed_title%20=%20transcriber(document.title);%20%20%20%20%20}%20}%20%20/*%20-------------------------------------------------------------------------%20*/%20/*%20run%20the%20transcription%20*/%20%20var%20transcriber%20=%20getTranscriber(lang);%20transcribeNode(document.body,%20transcriber);%20transcribeTitle(transcriber);';
+
+      $(".insert-cs-bookmarklet").each(function(){ $(this).attr("href", csBookmarklet); });
+      $(".insert-en-bookmarklet").each(function(){ $(this).attr("href", enBookmarklet); });
+    </script>
   </body>
 </html>
